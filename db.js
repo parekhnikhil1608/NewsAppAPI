@@ -1,12 +1,13 @@
 const sql = require('mssql')
 
 const config = {
-    user: "USERNAME",
-    password: "PASSWORD",
-    server: "SERVER_NAME",
-    database: "DATABASE_NAME",
+    user: "sa",
+    password: "sa123",
+    server: "CGM2016",
+    database: "trainee_test",
     options: {
         encrypt: false,
+        trustServerCertificate: true,
     },
     pool: {
         max: 50,
@@ -14,6 +15,7 @@ const config = {
         idleTimeoutMillis: 300000,
     },
 };
+
 
 const dbConnection = ()=>{
     sql.connect(config).then(() => {
