@@ -46,6 +46,6 @@ app.get('/json', function (req, res) {
     res.json(obj)
   })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Server is running on port ${port}`)
 })
